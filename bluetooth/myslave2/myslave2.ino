@@ -1,8 +1,8 @@
 #include <SoftwareSerial.h>
 SoftwareSerial BTserial(10, 11);
 
-int state = 0;
-
+int x = 0;
+int y = 0;
 void setup() {
   // initialize digital pin 8 as an output.
 
@@ -16,8 +16,12 @@ void setup() {
 void loop() {
 
   if (BTserial.available() > 0) { // Checks whether data is comming from the serial port
-    state = BTserial.read(); // Reads the data from the serial port
-  Serial.println(state);
+    x = BTserial.read(); // Reads the data from the serial port
+    y = BTserial.read(); // Reads the data from the serial port
+    
+  Serial.println(x);
+  Serial.println(y);
+  
   }
  
   }
